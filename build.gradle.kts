@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.4.10"
+    id("org.jmailen.kotlinter") version "3.2.0"
 }
 
 group = "dev.moreal"
@@ -20,4 +21,12 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "13"
     }
+}
+
+kotlinter {
+    ignoreFailures = false
+    indentSize = 4
+    reporters = arrayOf("checkstyle", "plain")
+    experimentalRules = false
+    disabledRules = emptyArray()
 }
